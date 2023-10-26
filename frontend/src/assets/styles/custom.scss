@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    #root {
+        .product-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
