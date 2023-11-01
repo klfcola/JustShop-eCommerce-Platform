@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-platform",
+  "version": "1.0.0",
+  "description": "eCommerce application built with the MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klfcola/ecommerce-platform.git"
+  },
+  "author": "Gerardo Acedo & Kevin Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klfcola/ecommerce-platform/issues"
+  },
+  "homepage": "https://github.com/klfcola/ecommerce-platform#readme"
+}
