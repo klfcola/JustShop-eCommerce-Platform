@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/klfcola/ecommerce-platform/issues"
   },
-  "homepage": "https://github.com/klfcola/ecommerce-platform#readme"
+  "homepage": "https://github.com/klfcola/ecommerce-platform#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
