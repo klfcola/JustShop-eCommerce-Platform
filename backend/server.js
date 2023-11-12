@@ -2,10 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import products from "./data/products.json" assert { type: "json" };
 import cors from "cors";
+import connectDB from "./config/db.js";
+
+dotenv.config();
 
 const port = process.env.PORT || 5001;
 
-dotenv.config();
+connectDB(); // Connect to MongoDB
 
 const app = express();
 
