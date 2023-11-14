@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import products from "./data/products.json" assert { type: "json" };
+import colors from "colors";
+import products from "./data/products.js";
 import cors from "cors";
 import connectDB from "./config/db.js";
 
@@ -27,7 +28,7 @@ app.get("/api/products/:id", (req, res) => {
 
     let foundProduct = null;
 
-    products.products.forEach((p) => {
+    products.forEach((p) => {
         if (p._id === productId) {
             foundProduct = p;
         }
@@ -40,4 +41,6 @@ app.get("/api/products/:id", (req, res) => {
     }
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () =>
+    console.log(`Server running on port ${port}!`.green.inverse)
+);
