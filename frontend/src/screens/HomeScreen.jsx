@@ -12,7 +12,7 @@ const HomeScreen = () => {
             try {
                 const { data } = await axios.get("/api/products");
                 console.log("data", data);
-                setProducts(data.products);
+                setProducts(data);
             } catch (error) {
                 console.log("Error fetching products", error);
             }
