@@ -9,8 +9,8 @@
         "server": "nodemon backend/server.js",
         "client": "npm start --prefix frontend",
         "dev": "concurrently \"npm run server\" \"npm run client\" ",
-        "importData": "node backend/seeds.js",
-        "deleteData": "node backend/seeds.js -d"
+        "importData": "node backend/data/seeds.js",
+        "deleteData": "node backend/data/seeds.js -d"
     },
     "repository": {
         "type": "git",
