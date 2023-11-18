@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import products from "./data/products.js";
+// import products from "./data/products.js";
+import productRoutes from "./routes/productRoutes.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -13,19 +15,9 @@ app.get("/", (req, res) => {
     res.send("API is running...");
 });
 
-app.get("/api/products", (req, res) => {
-    res.json(products);
-});
+app.use("/api/products", productRoutes);
 
-app.get("/api/products/:id", (req, res) => {
-    const productId = req.params.id;
-    let foundProduct = products.find((p) => p._id === productId);
-
-    if (foundProduct) {
-        res.json(foundProduct);
-    } else {
-        res.status(404).json({ message: "Product not found" });
-    }
-});
+app.use(notFound);
+app.use(errorHandler);
 
 export default app;
