@@ -11,12 +11,12 @@ import {
     Button,
     ListGroupItem,
 } from "react-bootstrap";
-import Rating from "../components/Rating";
+import Rating from "../components/Rating.jsx";
 import { useState } from "react";
 // import axios from "axios";
 import { useGetProductDetailsQuery } from "../redux/slices/productsApiSlice.js";
-import Loader from "../components/Loader";
-import Message from "../components/Message";
+import Loader from "../components/Loader.jsx";
+import Message from "../components/Message.jsx";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice.js";
 

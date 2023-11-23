@@ -12,8 +12,8 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
-import Message from "../components/Message";
-import { addToCart, removeFromCart } from "../redux/slices/cartSlice";
+import Message from "../components/Message.jsx";
+import { addToCart, removeFromCart } from "../redux/slices/cartSlice.js";
 
 const CartScreen = () => {
     const dispatch = useDispatch();
