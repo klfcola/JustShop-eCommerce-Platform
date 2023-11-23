@@ -15,12 +15,14 @@ import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen.jsx";
 
 const routes = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App />}>
             <Route index={true} path="/" element={<HomeScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
+            <Route path="/cart" element={<CartScreen />} />
         </Route>
     )
 );
