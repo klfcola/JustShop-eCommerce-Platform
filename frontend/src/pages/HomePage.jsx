@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import Product from "../components/Product";
+import Product from "../components/Product.jsx";
 // import { useEffect, useState } from "react";
 // import axios from "axios";
 import { useGetProductsQuery } from "../redux/slices/productsApiSlice.js";
-import Loader from "../components/Loader";
-import Message from "../components/Message";
+import Loader from "../components/Loader.jsx";
+import Message from "../components/Message.jsx";
 
 const HomeScreen = () => {
     // const [products, setProducts] = useState([]);
