@@ -7,5 +7,5 @@ connectDB(); // Connect to MongoDB
 const port = process.env.PORT || 5001;
 
 app.listen(port, () =>
-    console.log(`Server running on port ${port}!`.green.inverse)
+    console.log(`Server running on port ${port}`.green.inverse)
 );
