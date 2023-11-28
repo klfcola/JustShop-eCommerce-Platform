@@ -13,8 +13,8 @@ import {
 import FormContainer from "../components/FormContainer";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import { useLoginMutation } from "../redux/slices/usersApiSlice";
-import { setCredentials } from "../redux/slices/authSlice";
+import { useLoginMutation } from "../redux/slices/usersApiSlice.js";
+import { setCredentials } from "../redux/slices/authSlice.js";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
