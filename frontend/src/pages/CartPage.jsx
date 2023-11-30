@@ -33,7 +33,7 @@ const CartScreen = () => {
     };
 
     const checkoutHandler = () => {
-        navigete("/login");
+        navigete("/login?redirect=/shipping");
     };
 
     return (

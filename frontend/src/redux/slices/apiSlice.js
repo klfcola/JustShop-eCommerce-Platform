@@ -3,6 +3,7 @@ import { BASE_URL } from "../constants.js";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
+    credentials: "include", // Bring cookies
 });
 
 export const apiSlice = createApi({

@@ -11,7 +11,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: "http://localhost:3000",
+    credentials: true, // Allow to bring cookies
+};
+app.use(cors(corsOptions));
 
 // Body parser middleware
 app.use(express.json());
