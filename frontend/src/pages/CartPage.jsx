@@ -32,9 +32,11 @@ const CartScreen = () => {
     dispatch(removeFromCart(id));
   };
 
-  const checkoutHandler = () => {
-    navigete("/shipping");
-  };
+
+    const checkoutHandler = () => {
+        navigete("/login?redirect=/shipping");
+    };
+
 
   return (
     <Row>
