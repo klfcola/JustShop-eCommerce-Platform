@@ -11,6 +11,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import HomePage from "./pages/HomePage.jsx";
@@ -32,7 +33,6 @@ const routes = createBrowserRouter(
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-
       <Route path="/shipping" element={<ShippingPage />} />
       <Route path="/payment" element={<PaymentPage />} />
       <Route path="/placeorder" element={<PlaceOrderPage />} />
@@ -46,7 +46,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={routes} />
+      <PayPalScriptProvider deferLoading={true}>
+        <RouterProvider router={routes} />
+      </PayPalScriptProvider>
     </Provider>
   </React.StrictMode>
 );
