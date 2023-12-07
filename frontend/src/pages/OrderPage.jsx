@@ -41,7 +41,7 @@ const OrderPage = () => {
     error: errorPaypal,
   } = useGetPayPalClientIdQuery();
 
-  const { userInfo } = useSelector((state) => state.auth);
+  const { userInformation } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (!errorPaypal && !loadingPaypal && paypal.clientId) {
