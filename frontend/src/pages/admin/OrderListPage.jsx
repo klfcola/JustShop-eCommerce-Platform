@@ -4,7 +4,7 @@ import { Table, Button } from "react-bootstrap";
 import { FaTimes } from "react-icons/fa";
 import Message from "../../components/Message.jsx";
 import Loader from "../../components/Loader.jsx";
-import { useGetOrdersQuery } from "../../redux/slices/ordersApiSlice";
+import { useGetOrdersQuery } from "../../redux/slices/ordersApiSlice.js";
 
 const OrderListPage = () => {
     const { data: orders, isLoading, error } = useGetOrdersQuery();
