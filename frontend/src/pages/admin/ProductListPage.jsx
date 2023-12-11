@@ -7,6 +7,7 @@ import Loader from "../../components/Loader.jsx";
 import {
     useGetProductsQuery,
     useCreateProductMutation,
+    useDeleteProductMutation,
 } from "../../redux/slices/productsApiSlice.js";
 import { toast } from "react-toastify";
 
@@ -16,14 +17,25 @@ const ProductListPage = () => {
     const [createProduct, { isLoading: loadingCreate }] =
         useCreateProductMutation();
 
-    const deleteHandler = (id) => {
-        console.log("Delete", id);
-    };
+    const [deleteProduct, { isLoading: loadingDelete }] =
+        useDeleteProductMutation();
 
     const createProductHandler = async () => {
         if (window.confirm("Are you sure you want to create a new product?")) {
             try {
                 await createProduct();
+                refetch();
+            } catch (error) {
+                toast.error(error?.data?.message || error.error);
+            }
+        }
+    };
+
+    const deleteHandler = async (id) => {
+        if (window.confirm("Are you sure you want to delete this product?")) {
+            try {
+                await deleteProduct(id);
+                toast.success("Product deleted");
                 refetch();
             } catch (error) {
                 toast.error(error?.data?.message || error.error);
@@ -47,7 +59,10 @@ const ProductListPage = () => {
                     </Button>
                 </Col>
             </Row>
+
             {loadingCreate && <Loader />}
+            {loadingDelete && <Loader />}
+
             {isLoading ? (
                 <Loader />
             ) : error ? (
