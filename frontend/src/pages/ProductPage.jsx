@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice.js";
 import { toast } from "react-toastify";
 
-const ProductScreen = () => {
+const ProductPage = () => {
     // const [product, setProduct] = useState({});
 
     const { id: productId } = useParams();
@@ -294,4 +294,4 @@ const ProductScreen = () => {
     );
 };
 
-export default ProductScreen;
+export default ProductPage;

@@ -6,10 +6,11 @@ import Product from "../components/Product.jsx";
 import { useGetProductsQuery } from "../redux/slices/productsApiSlice.js";
 import Loader from "../components/Loader.jsx";
 import Message from "../components/Message.jsx";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Paginate from "../components/Paginate.jsx";
+import ProductCarousel from "../components/ProductCarousel.jsx";
 
-const HomeScreen = () => {
+const HomePage = () => {
     // const [products, setProducts] = useState([]);
 
     // useEffect(() => {
@@ -34,6 +35,13 @@ const HomeScreen = () => {
 
     return (
         <>
+            {!keyword ? (
+                <ProductCarousel />
+            ) : (
+                <Link to="/" className="btn btn-dark mb-4">
+                    Back
+                </Link>
+            )}
             {isLoading ? (
                 <Loader />
             ) : error ? (
@@ -61,4 +69,4 @@ const HomeScreen = () => {
     );
 };
 
-export default HomeScreen;
+export default HomePage;
