@@ -115,35 +115,39 @@ const ProfilePage = () => {
                     <Table striped hover responsive className="table-sm">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>DATE</th>
-                                <th>TOTAL</th>
-                                <th>PAID</th>
-                                <th>DELIVERED</th>
-                                <th></th>
+                                <th className="text-center">ID</th>
+                                <th className="text-center">DATE</th>
+                                <th className="text-center">TOTAL</th>
+                                <th className="text-center">PAID</th>
+                                <th className="text-center">DELIVERED</th>
+                                <th className="text-center"></th>
                             </tr>
                         </thead>
                         <tbody>
                             {orders.map((order) => (
                                 <tr key={order._id}>
-                                    <td>{order._id}</td>
-                                    <td>{order.createdAt.substring(0, 10)}</td>
-                                    <td>${order.totalPrice}</td>
-                                    <td>
+                                    <td className="text-center">{order._id}</td>
+                                    <td className="text-center">
+                                        {order.createdAt.substring(0, 10)}
+                                    </td>
+                                    <td className="text-center">
+                                        ${order.totalPrice}
+                                    </td>
+                                    <td className="text-center">
                                         {order.isPaid ? (
                                             order.paidAt.substring(0, 10)
                                         ) : (
                                             <FaTimes style={{ color: "red" }} />
                                         )}
                                     </td>
-                                    <td>
+                                    <td className="text-center">
                                         {order.isDelivered ? (
                                             order.deliveredAt.substring(0, 10)
                                         ) : (
                                             <FaTimes style={{ color: "red" }} />
                                         )}
                                     </td>
-                                    <td>
+                                    <td className="text-center">
                                         <LinkContainer
                                             to={`/order/${order._id}`}
                                         >
