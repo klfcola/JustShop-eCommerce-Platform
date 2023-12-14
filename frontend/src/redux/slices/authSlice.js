@@ -16,11 +16,14 @@ const authSlice = createSlice({
                 "userInformation",
                 JSON.stringify(action.payload)
             );
+
+            const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+            localStorage.setItem("expirationTime", expirationTime);
         },
 
         logout: (state, action) => {
             state.userInformation = null;
-            localStorage.removeItem("userInformation");
+            localStorage.clear();
         },
     },
 });

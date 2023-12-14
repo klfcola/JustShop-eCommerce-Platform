@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useLogoutMutation } from "../redux/slices/usersApiSlice.js";
 import { logout } from "../redux/slices/authSlice.js";
 import SearchBox from "./SearchBox.jsx";
+import { resetCart } from "../redux/slices/cartSlice.js";
 
 const Header = () => {
     const { cartItems } = useSelector((state) => state.cart);
@@ -22,6 +23,7 @@ const Header = () => {
         try {
             await logoutAction().unwrap();
             dispatch(logout());
+            dispatch(resetCart());
             navigate("/login");
         } catch (error) {
             console.log(error);

@@ -142,7 +142,7 @@ const PlaceOrderPage = () => {
                             <ListGroup.Item>
                                 {error && (
                                     <Message variant="danger">
-                                        {error.message}
+                                        {error.data.message}
                                     </Message>
                                 )}
                             </ListGroup.Item>
