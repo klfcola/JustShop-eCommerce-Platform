@@ -3,45 +3,45 @@ import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Rating = ({ value, text }) => {
     return (
-        <div className="rating">
+        <div className="rating-area">
             <span>
                 {value >= 1 ? (
-                    <FaStar />
+                    <FaStar className="gold-star" />
                 ) : value >= 0.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalfAlt className="gold-star" />
                 ) : (
-                    <FaRegStar />
+                    <FaRegStar className="gold-star" />
                 )}
                 {value >= 2 ? (
-                    <FaStar />
+                    <FaStar className="gold-star" />
                 ) : value >= 1.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalfAlt className="gold-star" />
                 ) : (
-                    <FaRegStar />
+                    <FaRegStar className="gold-star" />
                 )}
                 {value >= 3 ? (
-                    <FaStar />
+                    <FaStar className="gold-star" />
                 ) : value >= 2.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalfAlt className="gold-star" />
                 ) : (
-                    <FaRegStar />
+                    <FaRegStar className="gold-star" />
                 )}
                 {value >= 4 ? (
-                    <FaStar />
+                    <FaStar className="gold-star" />
                 ) : value >= 3.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalfAlt className="gold-star" />
                 ) : (
-                    <FaRegStar />
+                    <FaRegStar className="gold-star" />
                 )}
                 {value >= 5 ? (
-                    <FaStar />
+                    <FaStar className="gold-star" />
                 ) : value >= 4.5 ? (
-                    <FaStarHalfAlt />
+                    <FaStarHalfAlt className="gold-star" />
                 ) : (
-                    <FaRegStar />
+                    <FaRegStar className="gold-star" />
                 )}
             </span>
-            <span className="rating-text">{text && text}</span>
+            <span>{text && text}</span>
         </div>
     );
 };

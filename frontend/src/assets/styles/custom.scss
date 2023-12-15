@@ -2,11 +2,157 @@
 
 body {
     #root {
+        #logo-image {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+
+        #badge {
+            color: black;
+            margin-left: 5px;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: black;
+            color: white;
+        }
+
+        #loader {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            display: block;
+        }
+
+        .product-title-link {
+            text-decoration: none;
+        }
+
         .product-title {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             color: black;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        .rating-area {
+            margin-bottom: 8px;
+        }
+
+        .gold-star {
+            color: goldenrod;
+        }
+
+        .carousel-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #cart-page-title {
+            margin-bottom: 20px;
+        }
+
+        #register-link {
+            color: black;
+        }
+
+        #login-link {
+            color: black;
+        }
+
+        #review-title {
+            margin-top: 20px;
+        }
+
+        .review-created-date {
+            margin-bottom: 8px;
+        }
+
+        .review-comment {
+            margin-bottom: 8px;
+        }
+
+        #review-writing-area {
+            padding: 0;
+        }
+
+        #review-sign-in {
+            color: darkblue;
+        }
+
+        .cart-item-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-link {
+            color: black;
+        }
+
+        .cart-item-price {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-delete-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkout-steps-progress {
+            color: black;
+        }
+
+        #payment-method:checked {
+            background-color: black;
+            border-color: black;
+        }
+
+        #place-order-shipping-address {
+            margin: 0;
+        }
+
+        .place-order-item-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .place-order-item-link {
+            color: black;
+        }
+
+        .place-order-item-price {
+            display: flex;
+            align-items: center;
+        }
+
+        .order-page-item-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .order-page-item-link {
+            color: black;
+        }
+
+        .order-page-item-price {
+            display: flex;
+            align-items: center;
+        }
+
+        #is-admin-check:checked {
+            background-color: black;
+            border-color: black;
         }
     }
 }

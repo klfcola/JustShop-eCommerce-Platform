@@ -36,15 +36,7 @@ const Header = () => {
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand>
-                            <img
-                                src={logo}
-                                alt="logo"
-                                style={{
-                                    width: "40px",
-                                    height: "40px",
-                                    margin: "10px",
-                                }}
-                            />
+                            <img src={logo} alt="logo" id="logo-image" />
                             JustShop
                         </Navbar.Brand>
                     </LinkContainer>
@@ -56,11 +48,7 @@ const Header = () => {
                                 <Nav.Link>
                                     <FaShoppingCart /> Cart
                                     {cartItems.length > 0 && (
-                                        <Badge
-                                            pill
-                                            bg="success"
-                                            style={{ marginLeft: "5px" }}
-                                        >
+                                        <Badge pill bg="light" id="badge">
                                             {cartItems.reduce(
                                                 (acc, item) =>
                                                     acc + item.quantity,
@@ -71,16 +59,16 @@ const Header = () => {
                                 </Nav.Link>
                             </LinkContainer>
                             {userInformation ? (
-                                <NavDropdown
-                                    title={userInformation.name}
-                                    id="username"
-                                >
+                                <NavDropdown title={userInformation.name}>
                                     <LinkContainer to="/profile">
-                                        <NavDropdown.Item>
+                                        <NavDropdown.Item className="dropdown-item">
                                             Profile
                                         </NavDropdown.Item>
                                     </LinkContainer>
-                                    <NavDropdown.Item onClick={logoutHandler}>
+                                    <NavDropdown.Item
+                                        className="dropdown-item"
+                                        onClick={logoutHandler}
+                                    >
                                         Logout
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -92,19 +80,19 @@ const Header = () => {
                                 </LinkContainer>
                             )}
                             {userInformation && userInformation.isAdmin && (
-                                <NavDropdown title="Admin" id="adminmenu">
+                                <NavDropdown title="Admin">
                                     <LinkContainer to="/admin/productlist">
-                                        <NavDropdown.Item>
+                                        <NavDropdown.Item className="dropdown-item">
                                             Products
                                         </NavDropdown.Item>
                                     </LinkContainer>
                                     <LinkContainer to="/admin/userlist">
-                                        <NavDropdown.Item>
+                                        <NavDropdown.Item className="dropdown-item">
                                             Users
                                         </NavDropdown.Item>
                                     </LinkContainer>
                                     <LinkContainer to="/admin/orderlist">
-                                        <NavDropdown.Item>
+                                        <NavDropdown.Item className="dropdown-item">
                                             Orders
                                         </NavDropdown.Item>
                                     </LinkContainer>

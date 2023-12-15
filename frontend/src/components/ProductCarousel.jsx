@@ -25,11 +25,7 @@ const ProductCarousel = () => {
                             src={product.image}
                             alt={product.name}
                             fluid
-                            style={{
-                                display: "block",
-                                marginLeft: "auto",
-                                marginRight: "auto",
-                            }}
+                            className="carousel-image"
                         />
                         <Carousel.Caption className="carousel-caption">
                             <h3>

@@ -52,8 +52,8 @@ const PlaceOrderPage = () => {
                     <ListGroup variant="flush">
                         <ListGroup.Item>
                             <h2>Shipping</h2>
-                            <p>
-                                <strong>Address: </strong>
+                            <p id="place-order-shipping-address">
+                                <strong>Address : </strong>
                                 {cart.shippingAddress.address},{" "}
                                 {cart.shippingAddress.city}{" "}
                                 {cart.shippingAddress.postalCode},{" "}
@@ -63,14 +63,14 @@ const PlaceOrderPage = () => {
 
                         <ListGroup.Item>
                             <h2>Payment Method</h2>
-                            <strong>Method: </strong>
+                            <strong>Method : </strong>
                             {cart.paymentMethod}
                         </ListGroup.Item>
 
                         <ListGroup.Item>
                             <h2>Order Items</h2>
                             {cart.cartItems.length === 0 ? (
-                                <Message>Your cart is empty!</Message>
+                                <Message>Your cart is empty !</Message>
                             ) : (
                                 <ListGroup variant="flush">
                                     {cart.cartItems.map((item, index) => (
@@ -84,14 +84,18 @@ const PlaceOrderPage = () => {
                                                         rounded
                                                     />
                                                 </Col>
-                                                <Col>
+                                                <Col className="place-order-item-title">
                                                     <Link
                                                         to={`/products/${item.product}`}
+                                                        className="place-order-item-link"
                                                     >
                                                         {item.name}
                                                     </Link>
                                                 </Col>
-                                                <Col md={4}>
+                                                <Col
+                                                    md={4}
+                                                    className="place-order-item-price"
+                                                >
                                                     {item.quantity} x $
                                                     {item.price} = $
                                                     {item.quantity * item.price}
@@ -113,28 +117,28 @@ const PlaceOrderPage = () => {
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Items:</Col>
+                                    <Col>Items :</Col>
                                     <Col>${cart.itemsPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Shipping:</Col>
+                                    <Col>Shipping :</Col>
                                     <Col>${cart.shippingPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Tax:</Col>
+                                    <Col>Tax :</Col>
                                     <Col>${cart.taxPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Total:</Col>
+                                    <Col>Total :</Col>
                                     <Col>${cart.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>

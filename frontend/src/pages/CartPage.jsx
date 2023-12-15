@@ -39,7 +39,7 @@ const CartPage = () => {
     return (
         <Row>
             <Col md={8}>
-                <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1>
+                <h1 id="cart-page-title">Shopping Cart</h1>
                 {cartItems.length === 0 ? (
                     <Message>Cart is empty !!</Message>
                 ) : (
@@ -55,13 +55,18 @@ const CartPage = () => {
                                             rounded
                                         />
                                     </Col>
-                                    <Col md={3}>
-                                        <Link to={`/product/${item._id}`}>
+                                    <Col md={4} className="cart-item-title">
+                                        <Link
+                                            to={`/product/${item._id}`}
+                                            className="cart-item-link"
+                                        >
                                             {item.name}
                                         </Link>
                                     </Col>
-                                    <Col md={2}>${item.price}</Col>
-                                    <Col md={2}>
+                                    <Col md={2} className="cart-item-price">
+                                        ${item.price}
+                                    </Col>
+                                    <Col md={2} className="cart-item-quantity">
                                         <Form.Control
                                             as="select"
                                             value={item.quantity}
@@ -86,8 +91,12 @@ const CartPage = () => {
                                             ))}
                                         </Form.Control>
                                     </Col>
-                                    <Col md={2}>
+                                    <Col
+                                        md={2}
+                                        className="cart-item-delete-button"
+                                    >
                                         <Button
+                                            className="btn-md"
                                             type="button"
                                             variant="dark"
                                             onClick={() =>
