@@ -154,5 +154,21 @@ body {
             background-color: black;
             border-color: black;
         }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination .page-link {
+            background-color: white; /* 分页项的背景色 */
+            color: black; /* 分页项的文字颜色 */
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: black; /* 激活（当前选中）分页项的背景色 */
+            color: white; /* 激活分页项的文字颜色 */
+            border-color: black; /* 激活分页项的边框颜色 */
+        }
     }
 }
