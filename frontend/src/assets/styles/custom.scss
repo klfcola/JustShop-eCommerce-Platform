@@ -161,14 +161,24 @@ body {
         }
 
         .pagination .page-link {
-            background-color: white; /* 分页项的背景色 */
-            color: black; /* 分页项的文字颜色 */
+            background-color: white;
+            color: black;
         }
 
         .pagination .page-item.active .page-link {
-            background-color: black; /* 激活（当前选中）分页项的背景色 */
-            color: white; /* 激活分页项的文字颜色 */
-            border-color: black; /* 激活分页项的边框颜色 */
+            background-color: black;
+            color: white;
+            border-color: black;
+        }
+
+        .carousel-image {
+            height: 600px;
+            width: 750px;
+        }
+
+        .carousel-caption {
+            color: white;
+            text-shadow: 2px 2px 2px black;
         }
     }
 }
