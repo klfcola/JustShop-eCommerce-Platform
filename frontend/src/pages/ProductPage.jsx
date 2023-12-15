@@ -192,9 +192,9 @@ const ProductPage = () => {
                             </Card>
                         </Col>
                     </Row>
-                    <Row className="review">
+                    <Row>
                         <Col md={6}>
-                            <h2>Reviews</h2>
+                            <h2 id="review-title">Reviews</h2>
                             {product.reviews.length === 0 && (
                                 <Message>No Reviews</Message>
                             )}
@@ -203,13 +203,15 @@ const ProductPage = () => {
                                     <ListGroup.Item key={review._id}>
                                         <strong>{review.name}</strong>
                                         <Rating value={review.rating} />
-                                        <p>
+                                        <p className="review-created-date">
                                             {review.createdAt.substring(0, 10)}
                                         </p>
-                                        <p>{review.comment}</p>
+                                        <p className="review-comment">
+                                            {review.comment}
+                                        </p>
                                     </ListGroup.Item>
                                 ))}
-                                <ListGroup.Item>
+                                <ListGroup.Item id="review-writing-area">
                                     <h2>Write a review</h2>
 
                                     {loadingProductReview && <Loader />}
@@ -220,7 +222,9 @@ const ProductPage = () => {
                                                 controlId="rating"
                                                 className="my-2"
                                             >
-                                                <Form.Label>Rating</Form.Label>
+                                                <Form.Label>
+                                                    Rating :
+                                                </Form.Label>
                                                 <Form.Control
                                                     as="select"
                                                     required
@@ -257,7 +261,9 @@ const ProductPage = () => {
                                                 controlId="comment"
                                                 className="my-2"
                                             >
-                                                <Form.Label>Comment</Form.Label>
+                                                <Form.Label>
+                                                    Comment :
+                                                </Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     row="3"
@@ -267,6 +273,7 @@ const ProductPage = () => {
                                                             e.target.value
                                                         )
                                                     }
+                                                    placeholder="Leave your comment here..."
                                                 ></Form.Control>
                                             </Form.Group>
                                             <Button
@@ -280,8 +287,13 @@ const ProductPage = () => {
                                     ) : (
                                         <Message>
                                             Please{" "}
-                                            <Link to="/login">sign in</Link> to
-                                            write a review
+                                            <Link
+                                                id="review-sign-in"
+                                                to="/login"
+                                            >
+                                                sign in
+                                            </Link>{" "}
+                                            to write a review
                                         </Message>
                                     )}
                                 </ListGroup.Item>

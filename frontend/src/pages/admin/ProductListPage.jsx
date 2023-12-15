@@ -57,7 +57,7 @@ const ProductListPage = () => {
                 </Col>
                 <Col className="text-end">
                     <Button
-                        className="btn-sm m-3"
+                        className="btn-md m-3"
                         variant="dark"
                         onClick={createProductHandler}
                     >
