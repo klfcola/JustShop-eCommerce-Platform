@@ -72,29 +72,39 @@ const ProductListPage = () => {
             {isLoading ? (
                 <Loader />
             ) : error ? (
-                <Message variant="danger">{error}</Message>
+                <Message variant="danger">{error.data.message}</Message>
             ) : (
                 <>
                     <Table striped hover responsive className="table-sm">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>PRICE</th>
-                                <th>CATEGORY</th>
-                                <th>BRAND</th>
-                                <th></th>
+                                <th className="text-center">ID</th>
+                                <th className="text-center">NAME</th>
+                                <th className="text-center">PRICE</th>
+                                <th className="text-center">CATEGORY</th>
+                                <th className="text-center">BRAND</th>
+                                <th className="text-center"></th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.products.map((product) => (
                                 <tr key={product._id}>
-                                    <td>{product._id}</td>
-                                    <td>{product.name}</td>
-                                    <td>{product.price}</td>
-                                    <td>{product.category}</td>
-                                    <td>{product.brand}</td>
-                                    <td>
+                                    <td className="text-center">
+                                        {product._id}
+                                    </td>
+                                    <td className="text-center">
+                                        {product.name}
+                                    </td>
+                                    <td className="text-center">
+                                        {product.price}
+                                    </td>
+                                    <td className="text-center">
+                                        {product.category}
+                                    </td>
+                                    <td className="text-center">
+                                        {product.brand}
+                                    </td>
+                                    <td className="text-center">
                                         <LinkContainer
                                             to={`/admin/product/${product._id}/edit`}
                                         >
@@ -107,7 +117,7 @@ const ProductListPage = () => {
                                         </LinkContainer>
                                         <Button
                                             variant="dark"
-                                            className="btn-sm"
+                                            className="btn-md"
                                             onClick={() =>
                                                 deleteHandler(product._id)
                                             }

@@ -40,44 +40,50 @@ const UserListPage = () => {
                 <Table striped hover responsive className="table-sm">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
-                            <th>EMAIL</th>
-                            <th>ADMIN</th>
-                            <th></th>
+                            <th className="text-center">ID</th>
+                            <th className="text-center">NAME</th>
+                            <th className="text-center">EMAIL</th>
+                            <th className="text-center">ADMIN</th>
+                            <th className="text-center"></th>
                         </tr>
                     </thead>
                     <tbody>
                         {users.map((user) => (
                             <tr key={user._id}>
-                                <td>{user._id}</td>
-                                <td>{user.name}</td>
-                                <td>
-                                    <a href={`mailto:${user.email}`}>
+                                <td className="text-center">{user._id}</td>
+                                <td className="text-center">{user.name}</td>
+                                <td className="text-center">
+                                    <a
+                                        href={`mailto:${user.email}`}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                        }}
+                                    >
                                         {user.email}
                                     </a>
                                 </td>
-                                <td>
+                                <td className="text-center">
                                     {user.isAdmin ? (
                                         <FaCheck style={{ color: "green" }} />
                                     ) : (
                                         <FaTimes style={{ color: "red" }} />
                                     )}
                                 </td>
-                                <td>
+                                <td className="text-center">
                                     <LinkContainer
                                         to={`/admin/user/${user._id}/edit`}
                                     >
                                         <Button
-                                            variant="dark"
-                                            className="btn-sm"
+                                            variant="light"
+                                            className="btn-md mx-2"
                                         >
                                             <FaEdit />
                                         </Button>
                                     </LinkContainer>
                                     <Button
-                                        variant="danger"
-                                        className="btn-sm"
+                                        variant="dark"
+                                        className="btn-md"
                                         onClick={() => deleteHandler(user._id)}
                                     >
                                         <FaTrash />

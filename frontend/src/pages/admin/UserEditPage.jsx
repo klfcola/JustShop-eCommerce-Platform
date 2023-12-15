@@ -85,7 +85,7 @@ const UserEditPage = () => {
 
                         <Form.Group controlId="isAdmin" className="my-2">
                             <Form.Check
-                                type="chcekbox"
+                                type="checkbox"
                                 label="Is Admin"
                                 checked={isAdmin}
                                 onChange={(e) => setIsAdmin(e.target.checked)}
