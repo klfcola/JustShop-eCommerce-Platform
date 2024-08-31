@@ -1,4 +1,4 @@
-// const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 
 export const BASE_URL = `http://localhost:${port}`;
 export const PRODUCTS_URL = "/api/products";
