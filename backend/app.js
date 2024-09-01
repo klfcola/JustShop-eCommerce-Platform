@@ -15,8 +15,8 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: "http://localhost:3000",
-    credentials: true, // Allow to bring cookies
+  origin: ["http://localhost:3000", "https://justshop-frontend.onrender.com"],
+  credentials: true, // Allow to bring cookies
 };
 app.use(cors(corsOptions));
 
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("API is running...");
+  res.send("API is running...");
 });
 
 app.use("/api/products", productRoutes);
@@ -37,7 +37,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
 
 app.get("/api/config/paypal", (req, res) =>
-    res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
+  res.send({ clientId: process.env.PAYPAL_CLIENT_ID })
 );
 
 // Set __dirname to current directory
